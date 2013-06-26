@@ -3,6 +3,7 @@ Ever hit performance bottlenecks with Time.now?  Willing to deal with the fuzzin
 ## FastTime is a stupid-simple binding to POSIX `gettimeofday`
 
 Very useful if what you want to do is compare times for things like cache invalidation where you don't mind a little jitter than gettimeofday can introduce.
+
 		1.9.3p374 :007 > puts Time.now.to_i.to_s + " " + gettimeofday.to_s
 		1372267854 1372267854
 		1.9.3p374 :008 > puts Benchmark.measure{for i in 1..1_000_000; Time.now < Time.now; end }
