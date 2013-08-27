@@ -27,3 +27,9 @@ For more info see: http://linux.die.net/man/2/gettimeofday
 
 Impl notes: time_t is cast to a (long int) in case it isnt already, so YMMV on speed if you are running a 32 bit ruby and Fixnum has to be promoted to a Bignum to store the long int.
 
+
+
+Alternatives
+===
+
+When I wrote this library, I was unaware of any alternatives.  Since that time, I have found one that uses the monotonic clock instead of `gettimeofday`: https://github.com/bwbuchanan/absolute_time
